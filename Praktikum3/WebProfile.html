@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Profil Saya</title>
+    
+    <!-- Muat font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Pengaturan Dasar */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #f4f7f6; /* Latar belakang abu-abu muda */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Kontainer Utama */
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Header & Judul */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        /* Tata letak bagian utama (Foto & Biodata) */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Agar responsif */
+            margin-bottom: 30px;
+        }
+
+        /* f. Foto Diri */
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Membuat gambar bulat */
+            object-fit: cover; /* Mencegah distorsi gambar */
+            border: 5px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .profile-intro {
+            flex: 1;
+            min-width: 300px; /* Agar tidak terlalu sempit di flex */
+        }
+        
+        .profile-intro h2 {
+            font-size: 2em;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        /* Judul Section */
+        h3 {
+            font-size: 1.6em;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db; /* Garis bawah biru */
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        /* g. Biodata Lengkap */
+        .biodata ul {
+            list-style-type: none;
+        }
+
+        .biodata li {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+        }
+
+        .biodata li strong {
+            display: inline-block;
+            width: 140px; /* Memberi lebar tetap untuk label */
+            color: #555;
+            flex-shrink: 0;
+        }
+
+        /* h. Deskripsi Diri */
+        .deskripsi-diri p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* i. Konten Multimedia */
+
+        /* Penampung Video Responsif */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rasio 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Koleksi Foto */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* j. Link Download File */
+        .download-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #27ae60; /* Warna hijau */
+            color: #ffffff;
+            padding: 14px 28px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .download-button:hover {
+            background-color: #219150;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #888;
+        }
+
+        /* Desain Responsif */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column; /* Ubah jadi tumpukan */
+                text-align: center;
+            }
+            
+            .profile-picture {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .biodata li {
+                flex-direction: column;
+                margin-bottom: 15px;
+            }
+            
+            .biodata li strong {
+                width: auto;
+                margin-bottom: 3px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Profil Pribadi</h1>
+        </header>
+
+        <main>
+
+            <!-- f. Foto Diri & g. Biodata (Header) -->
+            <section class="profile-header">
+                
+                <!-- ganti src="..." dengan path ke foto Anda -->
+                <img src="https://placehold.co/180x180/EBF4FF/6366F1?text=Foto+Anda" alt="Foto Diri" class="profile-picture">
+                
+                <div class="profile-intro">
+                    <h2>Nama Lengkap Anda</h2>
+                    
+                    <!-- g. Biodata Lengkap -->
+                    <div class="biodata">
+                        <ul>
+                            <!-- Ganti konten di bawah ini dengan biodata Anda -->
+                            <li><strong>Nama:</strong> John Doe</li>
+                            <li><strong>Tanggal Lahir:</strong> 01 Januari 1995</li>
+                            <li><strong>Alamat:</strong> Jl. Contoh No. 123, Jakarta</li>
+                            <li><strong>Email:</strong> email.anda@example.com</li>
+                            <li><strong>Telepon:</strong> 0812-3456-7890</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- h. Deskripsi Diri -->
+            <section class="deskripsi-diri">
+                <h3>Tentang Saya</h3>
+                <!-- Ganti dengan paragraf deskripsi Anda -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
+                    pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
+                    Donec scelerisque, massa nec tincidunt set, ex nisl hndrerit leo, et 
+                    condimentum sem sem quis nisl.
+                </p>
+                <p>
+                    Nulla ut tellus turpis. In est eros, dapibus usurper volutpat, 
+                    lacinia vel magna. In hac habitasse platea dictumst. Cras nec 
+                    scelerisque nulla. Proin ut est et nulla dignissim tempus. 
+                    Donec varius, erat in placerat euismod, elit purus lobortis nibh.
+                </p>
+            </section>
+
+            <!-- i. Konten Multimedia -->
+            <section class="multimedia">
+                <h3>Multimedia</h3>
+                
+                <p style="margin-bottom: 15px; font-size: 1.1em;">Contoh Video:</p>
+                
+                <!-- Ganti 'embed/...' dengan ID video YouTube Anda -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TqnPuNpjuGY?si=SK_v_Wms_1aHxO60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <p style="margin-top: 30px; margin-bottom: 15px; font-size: 1.1em;">Koleksi Foto:</p>
+                
+                <div class="gallery-container">
+                    <!-- Ganti src="..." dengan path ke koleksi foto Anda -->
+                    <img src="https://placehold.co/200x150/fdebd0/e67e22?text=Foto+1" alt="Galeri Foto 1">
+                    <img src="https://placehold.co/200x150/d6eaf8/3498db?text=Foto+2" alt="Galeri Foto 2">
+                    <img src="https://placehold.co/200x150/d5f5e3/2ecc71?text=Foto+3" alt="Galeri Foto 3">
+                    <img src="https://placehold.co/200x150/faded7/e74c3c?text=Foto+4" alt="Galeri Foto 4">
+                    <img src="https://placehold.co/200x150/ebdef0/8e44ad?text=Foto+5" alt="Galeri Foto 5">
+                    <img src="https://placehold.co/200x150/e5e7e9/95a5a6?text=Foto+6" alt="Galeri Foto 6">
+                </div>
+            </section>
+
+            <!-- j. Link Download File -->
+            <section class="download-section">
+                <h3>Unduh CV Saya</h3>
+                <p style="margin-bottom: 20px;">Klik tombol di bawah ini untuk mengunduh CV saya dalam format PDF.</p>
+                
+                <!-- 
+                  Ganti 'path/ke/file_anda.pdf' dengan path file Anda.
+                  Atribut 'download' penting agar file diunduh, bukan dibuka di browser.
+                -->
+                <a href="path/ke/file_anda.pdf" class="download-button" download="CV-NamaAnda.pdf">
+                    Unduh File
+                </a>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 - Nama Anda. Dibuat dengan HTML & CSS.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

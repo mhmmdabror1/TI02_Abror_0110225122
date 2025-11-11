@@ -1,0 +1,169 @@
+/* ==== Pengaturan Dasar & Font Modern ==== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Menggunakan font sans-serif modern yang ada di sistem */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Abu-abu yang sangat muda */
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 3rem auto; /* Memberi lebih banyak ruang di atas dan bawah */
+    display: flex;
+    background-color: #fff;
+    /* Bayangan yang lebih lembut dan modern */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 10px; /* Sudut yang tumpul */
+    overflow: hidden; /* Memastikan anak elemen menghormati border-radius */
+}
+
+/* ==== Sidebar (Bagian Kiri) ==== */
+.sidebar {
+    width: 35%;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px; /* Padding lebih banyak */
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 40px; /* Jarak lebih banyak */
+}
+
+.profile-pic {
+    width: 130px; /* Sedikit lebih kecil */
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #3498db; /* Memberi aksen warna utama */
+    margin-bottom: 15px;
+}
+
+.profile h2 {
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.profile p {
+    font-size: 1em; /* Sedikit lebih besar */
+    font-style: normal; /* Menghilangkan italic */
+    color: #bdc3c7;
+    font-weight: 300;
+}
+
+/* Style heading yang lebih simpel di sidebar */
+.contact h3,
+.skills h3 {
+    color: #bdc3c7;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase; /* Gaya modern */
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #34495e; /* Garis yang lebih tipis */
+}
+
+.contact ul,
+.skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact li {
+    margin-bottom: 12px;
+    font-size: 0.9em;
+    word-wrap: break-word; /* Mencegah teks keluar */
+}
+
+.contact li strong {
+    color: #bdc3c7;
+    margin-right: 5px;
+}
+
+/* Style "Pill" (Pil) untuk skills */
+.skills li {
+    background-color: #34495e;
+    padding: 8px 12px;
+    border-radius: 20px; /* Bentuk pil */
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 8px; /* Jarak jika pindah baris */
+    font-size: 0.85em;
+}
+
+
+/* ==== Konten Utama (Bagian Kanan) ==== */
+.main-content {
+    width: 65%;
+    padding: 40px; /* Padding lebih banyak */
+}
+
+/* Style heading yang lebih simpel di konten utama */
+.main-content h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db; /* Garis lebih tipis */
+    padding-bottom: 8px;
+    margin-bottom: 30px; /* Jarak lebih banyak */
+    font-weight: 600;
+}
+
+.summary p {
+    margin-bottom: 30px;
+    font-size: 1.05em;
+    color: #555;
+}
+
+/* Memberi garis aksen di kiri untuk setiap item */
+.job, .edu-item {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 3px solid #eee;
+    transition: border-color 0.3s; /* Efek transisi halus */
+}
+
+/* Aksen berubah warna saat di-hover */
+.job:hover, .edu-item:hover {
+    border-left-color: #3498db;
+}
+
+.job h3, .edu-item h3 {
+    margin-bottom: 3px;
+    color: #2c3e50; /* Samakan dengan warna heading */
+    font-weight: 600;
+}
+
+/* Info Perusahaan / Universitas */
+.job p, .edu-item p {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #333;
+}
+
+.job .date, .edu-item .date {
+    font-style: normal; /* Menghilangkan italic */
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+    color: #555; /* Warna teks deskripsi lebih lembut */
+}
+
+.job ul li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Goose Bistro | Pizza-on-Demand</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+        }
+
+        /* Wadah utama form */
+        form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Mengatur grup fieldset */
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Judul untuk setiap fieldset */
+        legend {
+            font-weight: bold;
+            font-size: 1.3em;
+            padding: 0 10px;
+            color: #555;
+        }
+
+        /* Mengatur jarak dan tata letak label dan input */
+        form p {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block; /* Membuat label di atas input */
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        /* Menata input teks, email, tel, dan textarea */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Pastikan padding tidak merusak lebar */
+        }
+
+        /* Menata daftar radio dan checkbox */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Membuat label radio/checkbox sejajar dengan tombolnya */
+        ul li label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 8px;
+        }
+
+        /* Mengatur tombol agar tidak 100% lebarnya */
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        /* Menata tombol */
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            color: white;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF; /* Biru */
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        button[type="reset"] {
+            background-color: #6c757d; /* Abu-abu */
+        }
+        button[type="reset"]:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Black Goose Bistro | Pizza-on-Demand</h1>
+    <p>Our 12" wood-fired pizzas are available for delivery. Build your custom pizza and we'll deliver it within an hour.</p>
+
+    <form action="http://blackgoosebistro.com/pizza.php" method="POST">
+        
+        <fieldset>
+            <legend>Your Information</legend>
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="customername">
+            </p>
+            <p>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+            </p>
+            <p>
+                <label for="tel">Telephone Number:</label>
+                <input type="tel" id="tel" name="telephone">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </p>
+            <p>
+                <label for="instructions">Delivery instructions:</label>
+                <textarea id="instructions" name="instructions" rows="4" 
+                          maxlength="400" 
+                          placeholder="No more than 400 characters long"></textarea>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Design Your Dream Pizza</legend>
+            <p>Pizza specs</p>
+
+            <h3>Crust (Choose one):</h3>
+            <ul>
+                <li>
+                    <input type="radio" id="crust_classic" name="crust" value="classic">
+                    <label for="crust_classic">Classic white</label>
+                </li>
+                <li>
+                    <input type="radio" id="crust_multi" name="crust" value="multigrain">
+                    <label for="crust_multi">Multigrain</label>
+                </li>
+                <li>
+                    <input type="radio" id="crust_stuffed" name="crust" value="cheese">
+                    <label for="crust_stuffed">Cheese-stuffed crust</label>
+                </li>
+                <li>
+                    <input type="radio" id="crust_gluten" name="crust" value="glutenfree">
+                    <label for="crust_gluten">Gluten-free</label>
+                </li>
+            </ul>
+
+            <h3>Toppings (Choose as many as you want):</h3>
+            <ul>
+                <li>
+                    <input type="checkbox" id="top_red" name="toppings[]" value="red_sauce" checked>
+                    <label for="top_RED">Red sauce</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="top_white" name="toppings[]" value="white_sauce">
+                    <label for="top_white">White sauce</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="top_mozz" name="toppings[]" value="mozzarella">
+                    <label for="top_mozz">Mozzarella Cheese</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="top_pepp" name="toppings[]" value="pepperoni">
+                    <label for="top_pepp">Pepperoni</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="top_mush" name="toppings[]" value="mushrooms">
+                    <label for="top_mush">Mushrooms</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="top_peppers" name="toppings[]" value="peppers">
+                    <label for="top_peppers">Peppers</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="top_anch" name="toppings[]" value="anchovies">
+                    <label for="top_anch">Anchovies</label>
+                </li>
+            </ul>
+
+            <h3>Number</h3>
+            <p>
+                <label for="pizza_num">How many pizzas:</label>
+                <select id="pizza_num" name="number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </p>
+
+        </fieldset>
+
+        <div class="buttons">
+            <button type="submit">Bring me a pizza!</button>
+            <button type="reset">Reset</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

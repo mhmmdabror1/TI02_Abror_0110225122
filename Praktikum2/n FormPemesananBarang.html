@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+    <style>
+        /* Mengatur dasar halaman */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Kontainer utama untuk form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Judul form */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Grup untuk setiap pasangan label dan input */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Styling untuk label */
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Styling umum untuk input, select, dan textarea */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Membuat padding tidak menambah lebar */
+            font-size: 16px;
+        }
+
+        /* Styling untuk textarea agar bisa di-resize vertikal */
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Styling untuk grup radio button */
+        .radio-group {
+            display: flex;
+            gap: 20px; /* Jarak antar radio button */
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Jarak antara tombol radio dan teksnya */
+        }
+        
+        .radio-group input[type="radio"] {
+            margin-top: 0; /* Menyesuaikan posisi */
+        }
+
+        /* Styling untuk tombol submit */
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efek hover pada tombol submit */
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="#" method="POST">
+            <h2>Form Pemesanan Barang</h2>
+
+            <fieldset>
+                <legend>Informasi Pelanggan</legend>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama_pelanggan" required>
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat Pengiriman:</label>
+                    <textarea id="alamat" name="alamat_pengiriman" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon (WA):</label>
+                    <input type="tel" id="telepon" name="nomor_telepon" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email_pelanggan">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Detail Pesanan</legend>
+                <div class="form-group">
+                    <label for="barang">Pilih Barang:</label>
+                    <select id="barang" name="nama_barang">
+                        <option value="produk-a">Produk A - Rp 100.000</option>
+                        <option value="produk-b">Produk B - Rp 150.000</option>
+                        <option value="produk-c">Produk C - Rp 200.000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah">Jumlah:</label>
+                    <input type="number" id="jumlah" name="jumlah_barang" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Metode Pengiriman:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="pengiriman" value="reguler" checked> Reguler
+                        </label>
+                        <label>
+                            <input type="radio" name="pengiriman" value="express"> Express
+                        </label>
+                        <label>
+                            <input type="radio" name="pengiriman" value="ambil_ditempat"> Ambil di Tempat
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="catatan">Catatan Tambahan:</label>
+                    <textarea id="catatan" name="catatan" rows="2" placeholder="Contoh: Warna barang, jam pengiriman, dll..."></textarea>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Kirim Pesanan</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Detail Produk - Kaos Web Developer</title>
+    <link rel="stylesheet" href="produk1_nim_nama.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="#" class="logo">NFStore.com</a>
+            </div>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <a href="#" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i> Cart (1)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="product-detail">
+            
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="Images/mainblack.avif" alt="Gambar utama kaos" id="mainImage">
+                </div>
+                <div class="thumbnails">
+                    <img src="Images/1black.avif" alt="Thumbnail 1" class="thumb active">
+                    <img src="Images/2black.avif" alt="Thumbnail 2" class="thumb">
+                    <img src="Images/3black.avif" alt="Thumbnail 3" class="thumb">
+                    <img src="Images/4black.avif" alt="Thumbnail 4" class="thumb">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">ONE PIECE UT (Short Sleeve Graphic T-Shirt)</h1>
+                <div class="product-price">S$ 9.90</div>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>2 ulasan</span>
+                </div>
+
+                <div class="variant-selector">
+                    <span class="selector-label">Pilih Varian: <strong>Warna</strong></span>
+                    <div class="options-grid">
+                        <input type="radio" id="color-hitam" name="color" value="Hitam" checked>
+                        <label for="color-hitam" class="color-option">
+                            <span class="swatch" style="background-color: #000000;"></span>
+                            <span>Hitam</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="variant-selector">
+                    <span class="selector-label"><strong>Ukuran</strong></span>
+                    <div class="options-grid">
+                        <input type="radio" id="size-m" name="size" value="M" checked>
+                        <label for="size-m" class="size-option">M</label>
+                        
+                        <input type="radio" id="size-l" name="size" value="L">
+                        <label for="size-l" class="size-option">L</label>
+                        
+                        <input type="radio" id="size-xl" name="size" value="XL">
+                        <label for="size-xl" class="size-option">XL</label>
+                        
+                        <input type="radio" id="size-xxl" name="size" value="XXL">
+                        <label for="size-xxl" class="size-option">XXL</label>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-cart-plus"></i> Add To Cart
+                </button>
+            </div>
+        </section>
+
+        <section class="product-description">
+            <h2>Product Description</h2>
+            <p>
+                ONE PIECE
+
+This collection celebrates the iconic characters and works of art featured in the latest series that takes place on Egghead, the Future Island where Luffy, now one of the Four Emperors, has landed. Enjoy the worldview of the Egghead Arc with these designs.
+
+©Eiichiro Oda/Shueisha, Toei Animation
+- The images shown may include colors that are not available.
+Product ID 480696
+Please note that this product may have different product ID, even if it is the same item.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>

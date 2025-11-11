@@ -1,0 +1,294 @@
+/* ======================= PENGATURAN GLOBAL ======================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Wadah utama untuk memberi batas di kiri dan kanan */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Menyembunyikan radio button asli */
+input[type="radio"] {
+    display: none;
+}
+
+/* ======================= HEADER / NAVIGASI ======================= */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.search-bar button {
+    border: none;
+    background-color: #f0f0f0;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.cart-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ======================= BREADCRUMBS ======================= */
+.breadcrumbs {
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #007bff;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* ======================= LAYOUT DETAIL PRODUK ======================= */
+.product-detail {
+    display: flex;
+    gap: 30px; /* Jarak antara kolom kiri dan kanan */
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Kolom Kiri: Galeri Gambar */
+.product-gallery {
+    flex: 1; /* Mengambil 1 bagian dari ruang */
+}
+
+.main-image img {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.thumbnails img:hover,
+.thumbnails img.active {
+    border-color: #007bff;
+}
+
+/* Kolom Kanan: Info Produk */
+.product-info {
+    flex: 1; /* Mengambil 1 bagian dari ruang */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #d9534f;
+    margin-top: 10px;
+}
+
+.product-rating {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #f0ad4e; /* Warna bintang */
+}
+.product-rating span {
+    color: #777;
+    margin-left: 10px;
+}
+
+/* ======================= PEMILIH VARIAN (WARNA & UKURAN) ======================= */
+.variant-selector {
+    margin-top: 25px;
+}
+
+.selector-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Gaya untuk Pilihan Warna */
+.color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.color-option span:last-child {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Gaya Pilihan Warna Saat Aktif */
+input[type="radio"]:checked + .color-option {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+/* Gaya untuk Pilihan Ukuran */
+.size-option {
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.size-option:hover {
+    border-color: #aaa;
+}
+
+/* Gaya Pilihan Ukuran Saat Aktif */
+input[type="radio"]:checked + .size-option {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+    color: #007bff;
+}
+
+/* ======================= TOMBOL AKSI ======================= */
+.add-to-cart-btn {
+    margin-top: 30px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+/* ======================= DESKRIPSI PRODUK ======================= */
+.product-description {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.product-description h2 {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.product-description p {
+    line-height: 1.6;
+}
