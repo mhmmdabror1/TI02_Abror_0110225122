@@ -1,0 +1,90 @@
+/* Styling Umum */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Styling Container Grid */
+.grid-container {
+    width: 90%; /* Lebar relatif */
+    max-width: 800px; /* Batas lebar maksimum */
+    display: grid;
+    /* ---------------------------------------------------- */
+    /* Menentukan Kolom: Kiri Kecil | Tengah Lebar | Kanan Sedang */
+    /* Saya asumsikan tata letaknya memiliki 3 kolom utama */
+    grid-template-columns: 1fr 3fr 1.2fr; 
+    
+    /* Mendefinisikan Area Grid: */
+    /* header-top-left | header | header */
+    /* sidebar-left    | main   | sidebar-right */
+    /* footer          | footer | footer */
+    grid-template-areas:
+        "header-top-left header header"
+        "sidebar-left main sidebar-right"
+        "footer footer footer";
+    /* ---------------------------------------------------- */
+    gap: 5px; /* Jarak antar elemen */
+    padding: 10px;
+    border: 3px solid #ccc;
+    background-color: white; /* Latar belakang untuk membedakan batas luar */
+}
+
+/* Styling Dasar untuk semua elemen di dalam grid */
+.grid-container div {
+    padding: 15px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    border: 1px solid black; /* Garis hitam tipis di sekitar setiap elemen */
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Penentuan Posisi dan Warna Elemen */
+
+/* 1. Header Kiri Atas (Kuning) */
+.header-top-left {
+    grid-area: header-top-left;
+    background-color: #ffffa0; /* Kuning */
+    padding: 0; /* Ubah padding agar lebih menyerupai kotak kecil */
+    min-height: 50px;
+}
+
+/* 2. Header Utama (Oranye) */
+.header {
+    grid-area: header;
+    background-color: #ff8c00; /* Oranye */
+}
+
+/* 3. Sidebar Kiri (Hijau) */
+.sidebar-left {
+    grid-area: sidebar-left;
+    background-color: #98fb98; /* Hijau Muda */
+    min-height: 300px; /* Tambahkan tinggi agar terlihat panjang */
+}
+
+/* 4. Konten Utama (Abu-abu) */
+.main-content {
+    grid-area: main;
+    background-color: #c0c0c0; /* Abu-abu */
+}
+
+/* 5. Sidebar Kanan (Biru Muda) */
+.sidebar-right {
+    grid-area: sidebar-right;
+    background-color: #87ceeb; /* Biru Muda/Cyan */
+}
+
+/* 6. Footer (Biru Tua) */
+.footer {
+    grid-area: footer;
+    background-color: #0000ff; /* Biru Tua */
+    color: white;
+}
